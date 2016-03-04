@@ -1,46 +1,44 @@
 <DomainModel xmlns:db="http://www.webratio.com/2006/WebML/Database" xmlns:gr="http://www.webratio.com/2006/WebML/Graph">
-  <Class id="User" name="User" duration="persistent" gr:x="20" gr:y="150" gr:hideAttributes="false" attributeOrder="userOID userName password email token tokenExpirationDate secretKey" db:database="CloudDB" db:table="user">
-    <Attribute name="oid" id="userOID" type="integer" key="true" db:column="oid"/>
-    <Attribute name="userName" id="userName" type="string" db:column="username"/>
-    <Attribute name="password" id="password" type="password" db:column="password"/>
-    <Attribute name="email" id="email" type="string" db:column="email"/>
-    <Attribute id="token" name="Token" type="string" db:column="token"/>
-    <Attribute id="tokenExpirationDate" name="Token Expiration Date" type="timestamp" db:column="token_expiration_date"/>
-    <Attribute id="secretKey" name="secretKey" type="string" db:column="secretkey"/>
+  <Class id="User" name="User" duration="persistent" gr:x="30" gr:y="190" gr:hideAttributes="false" attributeOrder="userOID userName password email token tokenExpirationDate secretKey User#att9 User#att10" db:database="db2" db:table="USER">
+    <Attribute name="oid" id="userOID" type="integer" key="true" db:column="OID"/>
+    <Attribute name="userName" id="userName" type="string" db:column="USERNAME_2"/>
+    <Attribute name="password" id="password" type="password" db:column="PASSWORD_2"/>
+    <Attribute name="email" id="email" type="string" db:column="EMAIL_2"/>
+    <Attribute id="token" name="Token" type="string" db:column="TOKEN_2"/>
+    <Attribute id="tokenExpirationDate" name="Token Expiration Date" type="timestamp" db:column="TOKEN_EXPIRATION_DATE_2"/>
+    <Attribute id="secretKey" name="secretKey" type="string" db:column="SECRETKEY_2"/>
     <Comment xml:space="preserve">A user represents one mobile application user. In addition to the standard information such as username, password and email, a user is also characterized by a token. The token is a string that authorizes the usage of all services published by the backend application. The token is automatically set by the backend application at login. The token may have a limited duration, that's why a token expiration date can be set. The secret key is the encryption key used when transferring files between the mobile application and the backend.</Comment>
+    <Attribute id="User#att9" name="createdAt" type="timestamp" specialBehavior="createTimestamp" db:column="CREATEDAT_2"/>
+    <Attribute id="User#att10" name="updatedAt" type="timestamp" specialBehavior="updateTimestamp" db:column="UPDATEDAT_2"/>
   </Class>
-  <Class id="Role" name="Role" duration="persistent" gr:x="355" gr:y="200" gr:hideAttributes="false" attributeOrder="roleOID roleName" db:database="CloudDB" db:table="role">
-    <Attribute name="oid" id="roleOID" type="integer" key="true" db:column="oid"/>
-    <Attribute name="roleName" id="roleName" type="string" db:column="rolename"/>
+  <Class id="Role" name="Role" duration="persistent" gr:x="380" gr:y="100" gr:hideAttributes="false" attributeOrder="roleOID roleName Role#att7 Role#att8" db:database="db2" db:table="ROLE">
+    <Attribute name="oid" id="roleOID" type="integer" key="true" db:column="OID"/>
+    <Attribute name="roleName" id="roleName" type="string" db:column="ROLENAME_2"/>
     <Comment xml:space="preserve">A role represents an application role managed by the backend application. This class is automatically filled in by the backend application with all Roles elements modeled in the project.</Comment>
+    <Attribute id="Role#att7" name="createdAt" type="timestamp" specialBehavior="createTimestamp" db:column="CREATEDAT_2"/>
+    <Attribute id="Role#att8" name="updatedAt" type="timestamp" specialBehavior="updateTimestamp" db:column="UPDATEDAT_2"/>
   </Class>
-  <Class id="Device" name="Device" duration="persistent" attributeOrder="deviceOid deviceId notificationDeviceId deviceModel devicePlatform devicePlatformVersion deviceBrowser" gr:x="35" gr:y="-60" db:database="CloudDB" db:table="device">
-    <Attribute id="deviceOid" name="oid" type="integer" key="true" db:column="oid"/>
-    <Attribute id="deviceId" name="Device ID" type="string" db:column="device_id"/>
-    <Attribute id="notificationDeviceId" name="Notification Device ID" type="string" db:column="notification_device_id"/>
-    <Attribute id="deviceModel" name="Model" type="string" db:column="model"/>
-    <Attribute id="devicePlatform" name="Platform" type="string" db:column="platform"/>
-    <Attribute id="devicePlatformVersion" name="Platform Version" type="string" db:column="platform_version"/>
-    <Attribute id="deviceBrowser" name="Browser" type="string" db:column="browser"/>
+  <Class id="Device" name="Device" duration="persistent" attributeOrder="deviceOid deviceId notificationDeviceId deviceModel devicePlatform devicePlatformVersion deviceBrowser Device#att11 Device#att12" gr:x="35" gr:y="-60" db:database="db2" db:table="DEVICE">
+    <Attribute id="deviceOid" name="oid" type="integer" key="true" db:column="OID"/>
+    <Attribute id="deviceId" name="Device ID" type="string" db:column="DEVICE_ID_2"/>
+    <Attribute id="notificationDeviceId" name="Notification Device ID" type="string" db:column="NOTIFICATION_DEVICE_ID_2"/>
+    <Attribute id="deviceModel" name="Model" type="string" db:column="MODEL_2"/>
+    <Attribute id="devicePlatform" name="Platform" type="string" db:column="PLATFORM_2"/>
+    <Attribute id="devicePlatformVersion" name="Platform Version" type="string" db:column="PLATFORM_VERSION_2"/>
+    <Attribute id="deviceBrowser" name="Browser" type="string" db:column="BROWSER_2"/>
     <Comment xml:space="preserve">A device represents a mobile phone or a tablet on which there's an app that interacts with the backend application. A device is identified through the Device ID, which is automatically calculated from the backend application. Other information about the device: the Model (e.g. iPhone 6), the Platform (iOS/Android) and its version (e.g. 8.1.3), the installed Browser (e.g. Mozilla/5.0). Finally the Notification Device ID identifies the device for sending push notifications to the installed app; it must be sent by the mobile application at login.</Comment>
+    <Attribute id="Device#att11" name="createdAt" type="timestamp" specialBehavior="createTimestamp" db:column="CREATEDAT_2"/>
+    <Attribute id="Device#att12" name="updatedAt" type="timestamp" specialBehavior="updateTimestamp" db:column="UPDATEDAT_2"/>
   </Class>
   <Association id="User2Role_Role2User" name="User_Role" sourceClass="User" targetClass="Role" db:database="CloudDB" db:table="user_role">
-    <AssociationRole1 id="User2Role" name="roles" maxCard="N">
-      <db:JoinColumn attribute="userOID" name="user_oid"/>
-    </AssociationRole1>
-    <AssociationRole2 id="Role2User" name="users" maxCard="N">
-      <db:JoinColumn attribute="roleOID" name="role_oid"/>
-    </AssociationRole2>
+    <AssociationRole1 id="User2Role" name="roles" maxCard="N"/>
+    <AssociationRole2 id="Role2User" name="users" maxCard="N"/>
   </Association>
   <Association id="User2Device_Device2User" name="User_Device" sourceClass="User" targetClass="Device" db:database="CloudDB" db:table="device">
-    <AssociationRole1 id="User2Device" name="UserToDevice" maxCard="N">
-      <db:JoinColumn attribute="userOID" name="user_oid"/>
-    </AssociationRole1>
-    <AssociationRole2 id="Device2User" name="DeviceToUser" maxCard="1">
-      <db:JoinColumn attribute="deviceOid" name="oid"/>
-    </AssociationRole2>
+    <AssociationRole1 id="User2Device" name="UserToDevice" maxCard="N"/>
+    <AssociationRole2 id="Device2User" name="DeviceToUser" maxCard="1"/>
   </Association>
-  <DataServices db:dataServicesDatabase="db1" db:dataServicesSchema="APP">
+  <DataServices db:dataServicesSchema="APP" db:dataServicesDatabase="db2">
     <ServiceClass class="cls1">
       <ServiceRole>
         <ServiceMethod method="create"/>
@@ -51,18 +49,20 @@
     </ServiceClass>
   </DataServices>
   <UserServices>
-    <UserServiceOperation type="login"/>
+    <UserServiceOperation type="login" assignedRoles="rl1"/>
+    <UserServiceOperation type="register" assignedRoles="rl1"/>
+    <UserServiceOperation type="update" assignedRoles="rl1"/>
   </UserServices>
-  <db:Database id="db1" name="Data" type="Apache Derby" url="jdbc:derby://localhost:55432/data;create=true" username="username" password="password" schema="APP">
-  </db:Database>
-  <Class gr:x="635" gr:y="265" id="cls1" name="Animal" duration="persistent" attributeOrder="cls1#att1 cls1#att2 cls1#att3 cls1#att4 cls1#att5 cls1#att6" db:database="db1" db:table="ANIMAL">
+  <Class gr:x="425" gr:y="330" id="cls1" name="Animal" duration="persistent" attributeOrder="cls1#att1 cls1#att2 cls1#att3 cls1#att4 cls1#att5 cls1#att6" db:database="db2" db:table="ANIMAL">
     <Attribute id="cls1#att1" key="true" name="oid" type="integer" db:column="OID"/>
-    <Attribute id="cls1#att4" name="Seen" type="boolean" db:column="SEEN"/>
-    <Attribute id="cls1#att3" name="Species" type="string" db:column="SPECIES"/>
-    <Attribute id="cls1#att2" name="Name" type="string" db:column="NAME"/>
-    <Attribute id="cls1#att5" name="createdAt" type="timestamp" specialBehavior="createTimestamp" db:column="CREATEDAT"/>
-    <Attribute id="cls1#att6" name="updatedAt" type="timestamp" specialBehavior="updateTimestamp" db:column="UPDATEDAT"/>
+    <Attribute id="cls1#att4" name="Seen" type="boolean" db:column="SEEN_2"/>
+    <Attribute id="cls1#att3" name="Species" type="string" db:column="SPECIES_2"/>
+    <Attribute id="cls1#att2" name="Name" type="string" db:column="NAME_2"/>
+    <Attribute id="cls1#att5" name="createdAt" type="timestamp" specialBehavior="createTimestamp" db:column="CREATEDAT_2"/>
+    <Attribute id="cls1#att6" name="updatedAt" type="timestamp" specialBehavior="updateTimestamp" db:column="UPDATEDAT_2"/>
   </Class>
   <db:Database id="CloudDB" name="freeapp58" type="MySQL (InnoDB)" url="jdbc:mysql://52.49.236.126:3306/freeapp58" username="freeapp58" cryptedPassword="true" password="RkRCRkVCMTE=">
+  </db:Database>
+  <db:Database id="db2" name="ClassProject" type="Apache Derby" url="jdbc:derby://localhost:4821/ClassProject;create=true" username="admin" password="admin" schema="APP">
   </db:Database>
 </DomainModel>

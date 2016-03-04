@@ -1,34 +1,84 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<DBMetaData transactionLevel="Repeatable read" productName="MySQL" identifierQuoteString="`" productVersion="5.6.29" driverVersion="mysql-connector-java-5.1.33 ( Revision: alexander.soklakov@oracle.com-20140908134200-8ukofe1izi0r2b63 )" driverMajorVersion="5" driverMinorVersion="1" driverName="MySQL Connector Java">
-  <Table schema="" refreshed="true" type="TABLE" name="device" ignoreIndexes="false">
-    <Column sqlTypeId="4" indexed="unknown" notNull="true" autoIncrement="false" type="INT" size="10" name="oid" decimalDigits="0" primaryKey="true"/>
-    <Column sqlTypeId="12" indexed="unknown" notNull="false" autoIncrement="false" type="VARCHAR" size="255" name="device_id" decimalDigits="0" primaryKey="false"/>
-    <Column sqlTypeId="12" indexed="unknown" notNull="false" autoIncrement="false" type="VARCHAR" size="255" name="notification_device_id" decimalDigits="0" primaryKey="false"/>
-    <Column sqlTypeId="12" indexed="unknown" notNull="false" autoIncrement="false" type="VARCHAR" size="255" name="model" decimalDigits="0" primaryKey="false"/>
-    <Column sqlTypeId="12" indexed="unknown" notNull="false" autoIncrement="false" type="VARCHAR" size="255" name="platform" decimalDigits="0" primaryKey="false"/>
-    <Column sqlTypeId="12" indexed="unknown" notNull="false" autoIncrement="false" type="VARCHAR" size="255" name="platform_version" decimalDigits="0" primaryKey="false"/>
-    <Column sqlTypeId="12" indexed="unknown" notNull="false" autoIncrement="false" type="VARCHAR" size="255" name="browser" decimalDigits="0" primaryKey="false"/>
-    <Column sqlTypeId="4" indexed="unknown" notNull="false" autoIncrement="false" type="INT" size="10" name="user_oid" decimalDigits="0" primaryKey="false"/>
-    <ForeignKey foreignSchemaName="" name="fk_device_user" foreignColumnName="oid" foreignTableName="user" localColumnName="user_oid"/>
+<DBMetaData transactionLevel="Read Committed" productName="Apache Derby" identifierQuoteString="&quot;" productVersion="10.5.3.0 - (802917)" driverVersion="10.5.3.0 - (802917)" driverMajorVersion="10" driverMinorVersion="5" driverName="Apache Derby Network Client JDBC Driver">
+  <Schema name="APP"/>
+  <Schema name="NULLID"/>
+  <Schema name="SQLJ"/>
+  <Schema name="SYSCAT"/>
+  <Schema name="SYSCS_DIAG"/>
+  <Schema name="SYSCS_UTIL"/>
+  <Schema name="SYSFUN"/>
+  <Schema name="SYSPROC"/>
+  <Schema name="SYSSTAT"/>
+  <Table schema="APP" refreshed="true" type="TABLE" name="ANIMAL" ignoreIndexes="false">
+    <Column sqlTypeId="4" indexed="unknown" notNull="true" autoIncrement="false" type="INTEGER" size="10" name="OID" decimalDigits="0" primaryKey="true"/>
+    <Column sqlTypeId="5" indexed="unknown" notNull="false" autoIncrement="false" type="SMALLINT" size="5" name="SEEN" decimalDigits="0" primaryKey="false"/>
+    <Column sqlTypeId="12" indexed="unknown" notNull="false" autoIncrement="false" type="VARCHAR" size="255" name="SPECIES" decimalDigits="0" primaryKey="false"/>
+    <Column sqlTypeId="12" indexed="unknown" notNull="false" autoIncrement="false" type="VARCHAR" size="255" name="NAME" decimalDigits="0" primaryKey="false"/>
+    <Column sqlTypeId="93" indexed="unknown" notNull="false" autoIncrement="false" type="TIMESTAMP" size="26" name="CREATEDAT" decimalDigits="6" primaryKey="false"/>
+    <Column sqlTypeId="93" indexed="unknown" notNull="false" autoIncrement="false" type="TIMESTAMP" size="26" name="UPDATEDAT" decimalDigits="6" primaryKey="false"/>
+    <Column sqlTypeId="12" indexed="unknown" notNull="false" autoIncrement="false" type="VARCHAR" size="255" name="NAME_2" decimalDigits="0" primaryKey="false"/>
+    <Column sqlTypeId="12" indexed="unknown" notNull="false" autoIncrement="false" type="VARCHAR" size="255" name="SPECIES_2" decimalDigits="0" primaryKey="false"/>
+    <Column sqlTypeId="5" indexed="unknown" notNull="false" autoIncrement="false" type="SMALLINT" size="5" name="SEEN_2" decimalDigits="0" primaryKey="false"/>
+    <Column sqlTypeId="93" indexed="unknown" notNull="false" autoIncrement="false" type="TIMESTAMP" size="26" name="CREATEDAT_2" decimalDigits="6" primaryKey="false"/>
+    <Column sqlTypeId="93" indexed="unknown" notNull="false" autoIncrement="false" type="TIMESTAMP" size="26" name="UPDATEDAT_2" decimalDigits="6" primaryKey="false"/>
   </Table>
-  <Table schema="" refreshed="true" type="TABLE" name="role" ignoreIndexes="false">
-    <Column sqlTypeId="4" indexed="unknown" notNull="true" autoIncrement="false" type="INT" size="10" name="oid" decimalDigits="0" primaryKey="true"/>
-    <Column sqlTypeId="12" indexed="unknown" notNull="false" autoIncrement="false" type="VARCHAR" size="255" name="rolename" decimalDigits="0" primaryKey="false"/>
+  <Table schema="APP" refreshed="true" type="TABLE" name="DEVICE" ignoreIndexes="false">
+    <Column sqlTypeId="4" indexed="unknown" notNull="true" autoIncrement="false" type="INTEGER" size="10" name="OID" decimalDigits="0" primaryKey="true"/>
+    <Column sqlTypeId="12" indexed="unknown" notNull="false" autoIncrement="false" type="VARCHAR" size="255" name="DEVICE_ID" decimalDigits="0" primaryKey="false"/>
+    <Column sqlTypeId="12" indexed="unknown" notNull="false" autoIncrement="false" type="VARCHAR" size="255" name="NOTIFICATION_DEVICE_ID" decimalDigits="0" primaryKey="false"/>
+    <Column sqlTypeId="12" indexed="unknown" notNull="false" autoIncrement="false" type="VARCHAR" size="255" name="MODEL" decimalDigits="0" primaryKey="false"/>
+    <Column sqlTypeId="12" indexed="unknown" notNull="false" autoIncrement="false" type="VARCHAR" size="255" name="PLATFORM" decimalDigits="0" primaryKey="false"/>
+    <Column sqlTypeId="12" indexed="unknown" notNull="false" autoIncrement="false" type="VARCHAR" size="255" name="PLATFORM_VERSION" decimalDigits="0" primaryKey="false"/>
+    <Column sqlTypeId="12" indexed="unknown" notNull="false" autoIncrement="false" type="VARCHAR" size="255" name="BROWSER" decimalDigits="0" primaryKey="false"/>
+    <Column sqlTypeId="93" indexed="unknown" notNull="false" autoIncrement="false" type="TIMESTAMP" size="26" name="CREATEDAT" decimalDigits="6" primaryKey="false"/>
+    <Column sqlTypeId="93" indexed="unknown" notNull="false" autoIncrement="false" type="TIMESTAMP" size="26" name="UPDATEDAT" decimalDigits="6" primaryKey="false"/>
+    <Column sqlTypeId="4" indexed="unknown" notNull="false" autoIncrement="false" type="INTEGER" size="10" name="USER_OID" decimalDigits="0" primaryKey="false"/>
+    <Column sqlTypeId="93" indexed="unknown" notNull="false" autoIncrement="false" type="TIMESTAMP" size="26" name="CREATEDAT_2" decimalDigits="6" primaryKey="false"/>
+    <Column sqlTypeId="93" indexed="unknown" notNull="false" autoIncrement="false" type="TIMESTAMP" size="26" name="UPDATEDAT_2" decimalDigits="6" primaryKey="false"/>
+    <Column sqlTypeId="12" indexed="unknown" notNull="false" autoIncrement="false" type="VARCHAR" size="255" name="BROWSER_2" decimalDigits="0" primaryKey="false"/>
+    <Column sqlTypeId="12" indexed="unknown" notNull="false" autoIncrement="false" type="VARCHAR" size="255" name="DEVICE_ID_2" decimalDigits="0" primaryKey="false"/>
+    <Column sqlTypeId="12" indexed="unknown" notNull="false" autoIncrement="false" type="VARCHAR" size="255" name="MODEL_2" decimalDigits="0" primaryKey="false"/>
+    <Column sqlTypeId="12" indexed="unknown" notNull="false" autoIncrement="false" type="VARCHAR" size="255" name="PLATFORM_2" decimalDigits="0" primaryKey="false"/>
+    <Column sqlTypeId="12" indexed="unknown" notNull="false" autoIncrement="false" type="VARCHAR" size="255" name="PLATFORM_VERSION_2" decimalDigits="0" primaryKey="false"/>
+    <Column sqlTypeId="12" indexed="unknown" notNull="false" autoIncrement="false" type="VARCHAR" size="255" name="NOTIFICATION_DEVICE_ID_2" decimalDigits="0" primaryKey="false"/>
   </Table>
-  <Table schema="" refreshed="true" type="TABLE" name="user" ignoreIndexes="false">
-    <Column sqlTypeId="4" indexed="unknown" notNull="true" autoIncrement="false" type="INT" size="10" name="oid" decimalDigits="0" primaryKey="true"/>
-    <Column sqlTypeId="12" indexed="unknown" notNull="false" autoIncrement="false" type="VARCHAR" size="255" name="username" decimalDigits="0" primaryKey="false"/>
-    <Column sqlTypeId="12" indexed="unknown" notNull="false" autoIncrement="false" type="VARCHAR" size="255" name="password" decimalDigits="0" primaryKey="false"/>
-    <Column sqlTypeId="12" indexed="unknown" notNull="false" autoIncrement="false" type="VARCHAR" size="255" name="email" decimalDigits="0" primaryKey="false"/>
-    <Column sqlTypeId="12" indexed="unknown" notNull="false" autoIncrement="false" type="VARCHAR" size="255" name="token" decimalDigits="0" primaryKey="false"/>
-    <Column sqlTypeId="93" indexed="unknown" notNull="false" autoIncrement="false" type="DATETIME" size="19" name="token_expiration_date" decimalDigits="0" primaryKey="false"/>
-    <Column sqlTypeId="12" indexed="unknown" notNull="false" autoIncrement="false" type="VARCHAR" size="255" name="secretkey" decimalDigits="0" primaryKey="false"/>
+  <Table schema="APP" refreshed="true" type="TABLE" name="ROLE" ignoreIndexes="false">
+    <Column sqlTypeId="4" indexed="unknown" notNull="true" autoIncrement="false" type="INTEGER" size="10" name="OID" decimalDigits="0" primaryKey="true"/>
+    <Column sqlTypeId="12" indexed="unknown" notNull="false" autoIncrement="false" type="VARCHAR" size="255" name="ROLENAME" decimalDigits="0" primaryKey="false"/>
+    <Column sqlTypeId="93" indexed="unknown" notNull="false" autoIncrement="false" type="TIMESTAMP" size="26" name="CREATEDAT" decimalDigits="6" primaryKey="false"/>
+    <Column sqlTypeId="93" indexed="unknown" notNull="false" autoIncrement="false" type="TIMESTAMP" size="26" name="UPDATEDAT" decimalDigits="6" primaryKey="false"/>
+    <Column sqlTypeId="93" indexed="unknown" notNull="false" autoIncrement="false" type="TIMESTAMP" size="26" name="CREATEDAT_2" decimalDigits="6" primaryKey="false"/>
+    <Column sqlTypeId="93" indexed="unknown" notNull="false" autoIncrement="false" type="TIMESTAMP" size="26" name="UPDATEDAT_2" decimalDigits="6" primaryKey="false"/>
+    <Column sqlTypeId="12" indexed="unknown" notNull="false" autoIncrement="false" type="VARCHAR" size="255" name="ROLENAME_2" decimalDigits="0" primaryKey="false"/>
   </Table>
-  <Table schema="" refreshed="true" type="TABLE" name="user_role" ignoreIndexes="false">
-    <Column sqlTypeId="4" indexed="unknown" notNull="true" autoIncrement="false" type="INT" size="10" name="user_oid" decimalDigits="0" primaryKey="true"/>
-    <Column sqlTypeId="4" indexed="unknown" notNull="true" autoIncrement="false" type="INT" size="10" name="role_oid" decimalDigits="0" primaryKey="true"/>
-    <ForeignKey foreignSchemaName="" name="fk_user_role_role" foreignColumnName="oid" foreignTableName="role" localColumnName="role_oid"/>
-    <ForeignKey foreignSchemaName="" name="fk_user_role_user" foreignColumnName="oid" foreignTableName="user" localColumnName="user_oid"/>
+  <Table schema="APP" refreshed="true" type="TABLE" name="USER" ignoreIndexes="false">
+    <Column sqlTypeId="4" indexed="unknown" notNull="true" autoIncrement="false" type="INTEGER" size="10" name="OID" decimalDigits="0" primaryKey="true"/>
+    <Column sqlTypeId="12" indexed="unknown" notNull="false" autoIncrement="false" type="VARCHAR" size="255" name="USERNAME" decimalDigits="0" primaryKey="false"/>
+    <Column sqlTypeId="12" indexed="unknown" notNull="false" autoIncrement="false" type="VARCHAR" size="255" name="PASSWORD" decimalDigits="0" primaryKey="false"/>
+    <Column sqlTypeId="12" indexed="unknown" notNull="false" autoIncrement="false" type="VARCHAR" size="255" name="EMAIL" decimalDigits="0" primaryKey="false"/>
+    <Column sqlTypeId="12" indexed="unknown" notNull="false" autoIncrement="false" type="VARCHAR" size="255" name="TOKEN" decimalDigits="0" primaryKey="false"/>
+    <Column sqlTypeId="93" indexed="unknown" notNull="false" autoIncrement="false" type="TIMESTAMP" size="26" name="TOKEN_EXPIRATION_DATE" decimalDigits="6" primaryKey="false"/>
+    <Column sqlTypeId="12" indexed="unknown" notNull="false" autoIncrement="false" type="VARCHAR" size="255" name="SECRETKEY" decimalDigits="0" primaryKey="false"/>
+    <Column sqlTypeId="93" indexed="unknown" notNull="false" autoIncrement="false" type="TIMESTAMP" size="26" name="CREATEDAT" decimalDigits="6" primaryKey="false"/>
+    <Column sqlTypeId="93" indexed="unknown" notNull="false" autoIncrement="false" type="TIMESTAMP" size="26" name="UPDATEDAT" decimalDigits="6" primaryKey="false"/>
+    <Column sqlTypeId="12" indexed="unknown" notNull="false" autoIncrement="false" type="VARCHAR" size="255" name="EMAIL_2" decimalDigits="0" primaryKey="false"/>
+    <Column sqlTypeId="12" indexed="unknown" notNull="false" autoIncrement="false" type="VARCHAR" size="255" name="PASSWORD_2" decimalDigits="0" primaryKey="false"/>
+    <Column sqlTypeId="12" indexed="unknown" notNull="false" autoIncrement="false" type="VARCHAR" size="255" name="SECRETKEY_2" decimalDigits="0" primaryKey="false"/>
+    <Column sqlTypeId="12" indexed="unknown" notNull="false" autoIncrement="false" type="VARCHAR" size="255" name="TOKEN_2" decimalDigits="0" primaryKey="false"/>
+    <Column sqlTypeId="93" indexed="unknown" notNull="false" autoIncrement="false" type="TIMESTAMP" size="26" name="TOKEN_EXPIRATION_DATE_2" decimalDigits="6" primaryKey="false"/>
+    <Column sqlTypeId="93" indexed="unknown" notNull="false" autoIncrement="false" type="TIMESTAMP" size="26" name="UPDATEDAT_2" decimalDigits="6" primaryKey="false"/>
+    <Column sqlTypeId="93" indexed="unknown" notNull="false" autoIncrement="false" type="TIMESTAMP" size="26" name="CREATEDAT_2" decimalDigits="6" primaryKey="false"/>
+    <Column sqlTypeId="12" indexed="unknown" notNull="false" autoIncrement="false" type="VARCHAR" size="255" name="USERNAME_2" decimalDigits="0" primaryKey="false"/>
+  </Table>
+  <Table schema="APP" refreshed="true" type="TABLE" name="USER_ROLE" ignoreIndexes="false">
+    <Column sqlTypeId="4" indexed="unknown" notNull="true" autoIncrement="false" type="INTEGER" size="10" name="USER_OID" decimalDigits="0" primaryKey="true"/>
+    <Column sqlTypeId="4" indexed="unknown" notNull="true" autoIncrement="false" type="INTEGER" size="10" name="ROLE_OID" decimalDigits="0" primaryKey="true"/>
+  </Table>
+  <Table schema="APP" refreshed="true" type="TABLE" name="WR_DELETE_HISTORY" ignoreIndexes="false">
+    <Column sqlTypeId="4" indexed="unknown" notNull="true" autoIncrement="false" type="INTEGER" size="10" name="OID" decimalDigits="0" primaryKey="true"/>
+    <Column sqlTypeId="12" indexed="unknown" notNull="true" autoIncrement="false" type="VARCHAR" size="200" name="OBJECT_ID" decimalDigits="0" primaryKey="false"/>
+    <Column sqlTypeId="12" indexed="unknown" notNull="true" autoIncrement="false" type="VARCHAR" size="32" name="CLASS_ID" decimalDigits="0" primaryKey="false"/>
+    <Column sqlTypeId="93" indexed="unknown" notNull="true" autoIncrement="false" type="TIMESTAMP" size="26" name="DELETED_AT" decimalDigits="6" primaryKey="false"/>
   </Table>
 </DBMetaData>

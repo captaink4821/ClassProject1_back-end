@@ -5,14 +5,14 @@
     <Property name="ajaxActivated">true</Property>
     <Property name="applicationServer">Tomcat</Property>
     <Property name="cloudDeploy">true</Property>
-    <Property name="dbConfigPath">C:\Users\admin\AppData\Local\Temp\WRDBConfig812289038459209212.xml</Property>
+    <Property name="dbConfigPath">C:\Users\admin\AppData\Local\Temp\WRDBConfig4381154567957196011.xml</Property>
     <Property name="defaultEncoding"></Property>
     <Property name="deployCorePluginDir">C:\WebRatio\WebRatio Mobile Platform Community 8.7.4\WebRatio\configuration\org.eclipse.osgi\131\0\.cp</Property>
     <Property name="derbySystemHome">${app.dir}/WEB-INF/derby</Property>
     <Property name="enterpriseProjectDir"></Property>
-    <Property name="eventSocketPort">62942</Property>
+    <Property name="eventSocketPort">59657</Property>
     <Property name="excludedProjects" type="list"></Property>
-    <Property name="generationTime">201603031743</Property>
+    <Property name="generationTime">201603041827</Property>
     <Property name="i18nBundleKeysFile" type="file"></Property>
     <Property name="i18nExtraBundleFile" type="file"></Property>
     <Property name="lockDir">C:\WebRatio\WebRatio Mobile Platform Community 8.7.4\workspace\ClassProject1back-end\.Temp~</Property>
@@ -22,7 +22,7 @@
     <Property name="productionMode">true</Property>
     <Property name="projectDir">C:\WebRatio\WebRatio Mobile Platform Community 8.7.4\workspace\ClassProject1back-end</Property>
     <Property name="projectName">ClassProject1back-end</Property>
-    <Property name="projectPath">C:\Users\admin\AppData\Local\Temp\Project8417581163844719088.wr</Property>
+    <Property name="projectPath">C:\Users\admin\AppData\Local\Temp\Project5139513173868502271.wr</Property>
     <Property name="projectType">WEBPROJECT</Property>
     <Property name="rootModuleName"></Property>
     <Property name="uiPluginDir">C:\WebRatio\WebRatio Mobile Platform Community 8.7.4\WebRatio\plugins\com.webratio.ide.ui_8.7.4.201602272125</Property>
